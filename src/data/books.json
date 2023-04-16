@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "To Kill a Mockingbird",
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "name": "1984",
+    "rating": 4.2
+  },
+  {
+    "id": 3,
+    "name": "The Great Gatsby",
+    "rating": 4.0
+  },
+  {
+    "id": 4,
+    "name": "Pride and Prejudice",
+    "rating": 4.1
+  },
+  {
+    "id": 5,
+    "name": "The Catcher in the Rye",
+    "rating": 4.3
+  },
+  {
+    "id": 6,
+    "name": "The Lord of the Rings",
+    "rating": 4.7
+  },
+  {
+    "id": 7,
+    "name": "Animal Farm",
+    "rating": 4.0
+  },
+  {
+    "id": 8,
+    "name": "Brave New World",
+    "rating": 4.2
+  },
+  {
+    "id": 9,
+    "name": "One Hundred Years of Solitude",
+    "rating": 4.6
+  },
+  {
+    "id": 10,
+    "name": "The Hitchhiker's Guide to the Galaxy",
+    "rating": 4.4
+  }
+]
