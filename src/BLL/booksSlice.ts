@@ -8,6 +8,7 @@ const booksSlice = createSlice({
         changeRating: (state, action) => {
             let index = state.findIndex(book => book.id === action.payload.id)
             state[index].rating = action.payload.rating
+            console.log(`New rating of ${state[index].name} is: ${action.payload.rating}`)
             return state
         }
     }

@@ -1,0 +1,18 @@
+.changeBtn {
+    background: rgb(34, 111, 186);
+    border: 0;
+    border-radius: 5px;
+    box-shadow: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    flex: 0 0 auto;
+    padding: 10px;
+    margin: 15px 0;
+    font-size: 1rem;
+}
+.changeBtn:hover {
+    background: rgb(112, 171, 229);
+}
+.changeBtn:active {
+    background: rgb(112, 229, 171);
+}
