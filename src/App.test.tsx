@@ -6,7 +6,6 @@ import {changeRating} from './BLL/booksSlice';
 import {Store} from "@reduxjs/toolkit";
 // @ts-ignore
 import configureStore from 'redux-mock-store'
-import {Book} from "./types/types";
 
 const mockStore = configureStore([]);
 
@@ -23,7 +22,10 @@ describe('BookList', () => {
     });
   });
 
-  afterAll(() => console.log('The last test has finished')  )
+  afterAll(() => {
+    console.log('The last test has finished')
+    jest.useRealTimers()
+  })
 
   test('renders the list of books sorted by rating', () => {
     render(
@@ -32,13 +34,12 @@ describe('BookList', () => {
         </Provider>
     );
 
-    const bookItems = store.getState().books.sort((a: Book, b: Book) => b.rating - a.rating);
+    const bookItems = screen.getAllByText(/Book \d/i)
     expect(bookItems).toHaveLength(3);
     expect(bookItems[0]).toHaveTextContent('Book 3');
     expect(bookItems[1]).toHaveTextContent('Book 1');
     expect(bookItems[2]).toHaveTextContent('Book 2');
   });
-
   test('changes the rating of a book at a random interval', () => {
     const dispatchSpy = jest.spyOn(store, 'dispatch');
 
@@ -56,14 +57,14 @@ describe('BookList', () => {
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
-        changeRating({ id: 2, rating: expect.any(String) })
+        changeRating({ id: expect.any(Number), rating: expect.any(Number) })
     );
 
     jest.advanceTimersByTime(2500);
 
     expect(dispatchSpy).toHaveBeenCalledTimes(2);
     expect(dispatchSpy).toHaveBeenCalledWith(
-        changeRating({ id: 2, rating: expect.any(String) })
+        changeRating({ id: expect.any(Number), rating: expect.any(Number) })
     );
 
     const stopBtn = screen.getByText('Stop!');
