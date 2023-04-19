@@ -33,19 +33,21 @@ function BookList() {
     }, [isChanging])
 
     return (
-        <div>
-            {sortedBooks
-                .sort((a, b) => b.rating - a.rating)
-                .map((book, index) => {
-                    return <BookItem id={book.id} name={book.name} rating={book.rating} key={book.id}/>
-                })}
+        <div className={s.container}>
+            <div className={s.bookList}>
+                {sortedBooks
+                    .sort((a, b) => b.rating - a.rating)
+                    .map((book, index) => {
+                        return <BookItem id={book.id} name={book.name} rating={book.rating} key={book.id}/>
+                    })}
+            </div>
             <button onClick={() => setIsChanging(!isChanging)} className={s.changeBtn}>
                 {isChanging
                     ? 'Stop!'
                     : 'Start!'}
             </button>
         </div>
-    );
+    )
 }
 
 export default BookList;

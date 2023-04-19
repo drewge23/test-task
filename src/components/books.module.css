@@ -1,3 +1,12 @@
+.container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding: 5vh 0;
+}
 .changeBtn {
     background: rgb(34, 111, 186);
     border: 0;
@@ -8,11 +17,11 @@
     flex: 0 0 auto;
     padding: 10px;
     margin: 15px 0;
-    font-size: 1rem;
+    font-size: 2rem;
 }
 .changeBtn:hover {
-    background: rgb(112, 171, 229);
+    background: rgb(85, 156, 226);
 }
 .changeBtn:active {
-    background: rgb(112, 229, 171);
+    background: rgb(90, 223, 236);
 }
